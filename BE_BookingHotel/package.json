@@ -1,0 +1,38 @@
+{
+  "name": "be-hotel-booking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "seed": "node src/seed.js",
+    "check": "node --check src/app.js && node --check src/modules/hotel/hotel.service.js",
+    "test": "npm run check",
+    "test:core": "node --test test/hotel-core.integration.test.js",
+    "test:phase2": "node --test test/phase2-hold-payment.integration.test.js",
+    "test:phase3": "node --test test/phase3-operations.integration.test.js",
+    "test:phase4": "node --test test/phase4-management.integration.test.js",
+    "test:all": "npm run check && npm run test:core && npm run test:phase2 && npm run test:phase3 && npm run test:phase4"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "joi": "^18.2.9",
+    "jsonwebtoken": "^9.0.3",
+    "node-cron": "^4.6.0",
+    "nodemailer": "^10.0.14",
+    "pg": "^8.16.3",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
